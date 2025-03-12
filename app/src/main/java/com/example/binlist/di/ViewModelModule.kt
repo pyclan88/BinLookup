@@ -11,6 +11,7 @@ val viewModelModule = module {
         BinCheckViewModel(
             getCardInfoUseCase = get(),
             addCardToHistoryUseCase = get(),
+            mapNavigator = get(),
         )
     }
 
