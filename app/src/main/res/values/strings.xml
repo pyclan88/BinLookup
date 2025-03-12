@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">BinList</string>
+    <string name="tab_bin_check">Проверка BIN</string>
+    <string name="tab_request_history">История запросов</string>
+    <string name="enter_bin">BIN (ПЕРВЫЕ 6-8 ЧИСЕЛ)</string>
+    <string name="check">ПРОВЕРИТЬ</string>
+    <string name="scheme">"Платёжная система: "</string>
+    <string name="country_name">"Страна: "</string>
+    <string name="country_coordinates">Координаты страны</string>
+    <string name="latitude">"Широта: "</string>
+    <string name="longitude">"Долгота: "</string>
+    <string name="city">"Город банка: "</string>
+    <string name="url">"Сайт банка: "</string>
+    <string name="phone">"Телефон банка: "</string>
+    <string name="no_data">нет данных</string>
+    <string name="bin">"BIN: "</string>
+    <string name="limit_warning">Вы достигли лимита: 5 запросов в час. \nПожалуйста, подождите немного и попробуйте снова.</string>
+    <string name="no_inernet">Нет интернета</string>
+    <string name="server_error">Произошла ошибка на сервере. \nПопробуйте позже. \nЕсли проблема повторяется, убедитесь, что введённые данные корректны.</string>
+    <string name="not_found_error">Ошибка 404.\\nBIN не найден.</string>
+    <string name="date">Дата запроса:</string>
+</resources>
