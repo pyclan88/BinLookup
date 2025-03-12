@@ -2,6 +2,7 @@ package com.example.binlist.app
 
 import android.app.Application
 import com.example.binlist.di.dataModule
+import com.example.binlist.di.presentationModule
 import com.example.binlist.di.repositoryModule
 import com.example.binlist.di.useCaseModule
 import com.example.binlist.di.viewModelModule
@@ -15,7 +16,13 @@ class BinListApp : Application() {
 
         startKoin {
             androidContext(this@BinListApp)
-            modules(viewModelModule, dataModule, repositoryModule, useCaseModule)
+            modules(
+                viewModelModule,
+                dataModule,
+                repositoryModule,
+                useCaseModule,
+                presentationModule
+            )
         }
     }
 }

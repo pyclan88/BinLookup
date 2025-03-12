@@ -108,10 +108,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@id/tv_countryName_label"
         app:layout_constraintStart_toEndOf="@id/tv_countryName_label"
-        tools:text="Russian Federation" />
+        tools:text="Russian Federation (the)" />
 
     <TextView
-        android:id="@+id/tv_country_coordinates"
+        android:id="@+id/tv_coordinates_label"
         style="@style/Label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -121,42 +121,15 @@
         app:layout_constraintTop_toBottomOf="@id/tv_countryName_label" />
 
     <TextView
-        android:id="@+id/tv_latitude_label"
-        style="@style/Label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/latitude"
-        app:layout_constraintBottom_toBottomOf="@id/tv_latitude_value"
-        app:layout_constraintStart_toStartOf="@id/gl_start"
-        app:layout_constraintTop_toBottomOf="@id/tv_country_coordinates" />
-
-    <TextView
-        android:id="@+id/tv_latitude_value"
+        android:id="@+id/tv_coordinates_value"
         style="@style/Value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/tv_latitude_label"
-        app:layout_constraintStart_toEndOf="@id/tv_latitude_label"
-        tools:text="60" />
-
-    <TextView
-        android:id="@+id/tv_longitude_label"
-        style="@style/Label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/longitude"
-        app:layout_constraintBottom_toBottomOf="@id/tv_longitude_value"
-        app:layout_constraintStart_toStartOf="@id/gl_start"
-        app:layout_constraintTop_toBottomOf="@id/tv_latitude_label" />
-
-    <TextView
-        android:id="@+id/tv_longitude_value"
-        style="@style/Value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/tv_longitude_label"
-        app:layout_constraintStart_toEndOf="@id/tv_longitude_label"
-        tools:text="100" />
+        android:clickable="true"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@id/tv_coordinates_label"
+        app:layout_constraintStart_toEndOf="@id/tv_coordinates_label"
+        tools:text="60.0,100.0" />
 
     <TextView
         android:id="@+id/tv_city_label"
@@ -167,7 +140,7 @@
         android:text="@string/city"
         app:layout_constraintBottom_toBottomOf="@id/tv_city_value"
         app:layout_constraintStart_toStartOf="@id/gl_start"
-        app:layout_constraintTop_toBottomOf="@id/tv_longitude_label" />
+        app:layout_constraintTop_toBottomOf="@id/tv_coordinates_label" />
 
     <TextView
         android:id="@+id/tv_city_value"
@@ -193,9 +166,11 @@
         style="@style/Value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:textColor="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@id/tv_url_label"
         app:layout_constraintStart_toEndOf="@id/tv_url_label"
-        tools:text="sberbank.ru" />
+        tools:text="www.sberbank.ru" />
 
     <TextView
         android:id="@+id/tv_phone_label"
@@ -212,6 +187,8 @@
         style="@style/Value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autoLink="phone"
+        android:textColor="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@id/tv_phone_label"
         app:layout_constraintStart_toEndOf="@id/tv_phone_label"
         tools:text="8(800)555-55-50" />
@@ -222,7 +199,7 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         app:constraint_referenced_ids="tv_scheme_label, tv_scheme_value,
-        tv_countryName_label, tv_countryName_value, tv_country_coordinates, tv_latitude_label,
-        tv_latitude_value, tv_longitude_label, tv_longitude_value, tv_city_label, tv_city_value,
-        tv_url_label, tv_url_value, tv_phone_label, tv_phone_value" />
+        tv_countryName_label, tv_countryName_value, tv_coordinates_label,
+        tv_coordinates_value, tv_city_label, tv_city_value, tv_url_label, tv_url_value,
+        tv_phone_label, tv_phone_value" />
 </androidx.constraintlayout.widget.ConstraintLayout>

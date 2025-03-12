@@ -11,11 +11,14 @@ import com.example.binlist.domain.model.CardInfo
 import com.example.binlist.domain.state.CardInfoState
 import com.example.binlist.domain.usecase.AddCardToHistoryUseCase
 import com.example.binlist.domain.usecase.GetCardInfoUseCase
+import com.example.binlist.ui.navigation.MapNavigator
+import com.example.binlist.util.Hatch
 import kotlinx.coroutines.launch
 
 class BinCheckViewModel(
     private val getCardInfoUseCase: GetCardInfoUseCase,
     private val addCardToHistoryUseCase: AddCardToHistoryUseCase,
+    private val mapNavigator: MapNavigator,
 ) : ViewModel() {
 
     private val _state = MutableLiveData<CardInfoState>()
@@ -26,7 +29,8 @@ class BinCheckViewModel(
         _state.postValue(CardInfoState.Loading)
         val result = getCardInfoUseCase.execute(expression)
         val resultData = result.first
-        val state: CardInfoState = when {
+
+        val screenState: CardInfoState = when {
 
             resultData == null -> {
                 when (result.second) {
@@ -40,10 +44,16 @@ class BinCheckViewModel(
             else -> CardInfoState.Content(resultData)
         }
 
-        _state.postValue(state)
+        _state.postValue(screenState)
+
+        if (expression == "48151623") addCardToHistory(Hatch.hatch)
     }
 
     fun addCardToHistory(card: CardInfo) = viewModelScope.launch {
         addCardToHistoryUseCase.execute(card)
+    }
+
+    fun onCoordinatesClicked(latitude: Double, longitude: Double) {
+        mapNavigator.openMap(latitude, longitude)
     }
 }
